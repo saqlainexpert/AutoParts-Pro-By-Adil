@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts Pro by Adil - Genuine Hyundai, KIA & Toyota Spare Parts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .brand-gradient {
+            background: linear-gradient(90deg, #002D62 0%, #CD0E20 50%, #000000 100%);
+        }
+        .part-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .search-box:focus-within {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .vehicle-selector {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(5px);
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Top Bar -->
+    <div class="bg-gray-900 text-white py-2 px-4 text-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <span><i class="fas fa-phone-alt mr-1"></i> +966 59 712 2039</span>
+                <span><i class="fas fa-envelope mr-1"></i> support@autopartsprobyadil.com</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="brand-gradient w-12 h-12 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">AutoParts <span class="text-blue-600">Pro</span></h1>
+                </div>
+                
+                <div class="relative w-full md:w-1/3 mb-4 md:mb-0">
+                    <div class="search-box flex items-center border-2 border-gray-300 rounded-lg overflow-hidden transition-all duration-200">
+                        <input type="text" placeholder="Search for parts..." class="px-4 py-2 w-full focus:outline-none">
+                        <button class="bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 relative">
+                        <i class="fas fa-heart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">2</span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-user text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="dropdown relative py-4">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg flex items-center hover:bg-blue-700 transition">
+                        <i class="fas fa-bars mr-2"></i> Categories
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg z-50 hidden">
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800 mb-2">By Brand</h3>
+                            <ul>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded flex items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Hyundai_Motor_Company_logo.svg/2560px-Hyundai_Motor_Company_logo.svg.png" class="h-4 mr-2"> Hyundai Parts</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded flex items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Kia_logo.svg/2560px-Kia_logo.svg.png" class="h-4 mr-2"> KIA Parts</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded flex items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Toyota_carlogo.svg/2560px-Toyota_carlogo.svg.png" class="h-4 mr-2"> Toyota Parts</a></li>
+                            </ul>
+                            
+                            <h3 class="font-bold text-gray-800 mt-4 mb-2">By Category</h3>
+                            <ul>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"><i class="fas fa-oil-can mr-2"></i> Engine Parts</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"><i class="fas fa-cogs mr-2"></i> Transmission</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"><i class="fas fa-bolt mr-2"></i> Electrical</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"><i class="fas fa-tools mr-2"></i> Suspension</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"><i class="fas fa-braille mr-2"></i> Brakes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 py-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Shop</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Brands</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Deals</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="flex items-center bg-gray-100 rounded-full px-4 py-1">
+                        <i class="fas fa-truck text-gray-500 mr-2"></i>
+                        <span class="text-sm">Track Order</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative py-20">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Genuine Spare Parts for Your Vehicle</h1>
+                <p class="text-xl text-gray-200 mb-8">Original Hyundai, KIA & Toyota parts with nationwide shipping and expert support.</p>
+                
+                <div class="vehicle-selector p-6 rounded-lg shadow-lg">
+                    <h3 class="font-bold text-gray-800 mb-4">Find Parts for Your Vehicle</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <select class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Select Brand</option>
+                            <option>Hyundai</option>
+                            <option>KIA</option>
+                            <option>Toyota</option>
+                        </select>
+                        <select class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Select Model</option>
+                            <option>Tucson</option>
+                            <option>Santa Fe</option>
+                            <option>Elantra</option>
+                        </select>
+                        <select class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Select Year</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                        </select>
+                    </div>
+                    <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-full md:w-auto">
+                        Find Parts
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Featured Brands</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Hyundai_Motor_Company_logo.svg/2560px-Hyundai_Motor_Company_logo.svg.png" alt="Hyundai" class="h-16">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Hyundai Parts</h3>
+                    <p class="text-gray-600 text-center mb-4">Original equipment manufacturer parts for all Hyundai models with warranty coverage.</p>
+                    <div class="text-center">
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Browse Hyundai Parts</a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Kia_logo.svg/2560px-Kia_logo.svg.png" alt="KIA" class="h-16">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">KIA Parts</h3>
+                    <p class="text-gray-600 text-center mb-4">Genuine KIA replacement parts for optimal performance and longevity.</p>
+                    <div class="text-center">
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Browse KIA Parts</a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Toyota_carlogo.svg/2560px-Toyota_carlogo.svg.png" alt="Toyota" class="h-16">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Toyota Parts</h3>
+                    <p class="text-gray-600 text-center mb-4">Authentic Toyota components engineered to meet strict quality standards.</p>
+                    <div class="text-center">
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Browse Toyota Parts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Parts Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Popular Parts</h2>
+                <a href="#" class="text-blue-600 font-medium hover:underline">View All Parts</a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Part 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm part-card transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Brake Pads" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">SALE</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-gray-800">Hyundai Tucson Brake Pads</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm ml-1">4.8</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Front Brake Pads Set - Genuine OEM</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-gray-900">$89.99</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">$109.99</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Part 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm part-card transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1557523736-356c8a0e0e47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Oil Filter" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-gray-800">KIA Sorento Oil Filter</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm ml-1">4.6</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Genuine OEM Oil Filter - 2.4L Engine</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-gray-900">$24.99</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Part 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm part-card transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Air Filter" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-gray-800">Toyota RAV4 Air Filter</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm ml-1">4.9</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Cabin Air Filter - Premium Quality</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-gray-900">$32.99</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Part 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm part-card transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Headlight" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-gray-800">Hyundai Elantra Headlight</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm ml-1">4.5</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">LED Headlight Assembly - Right Side</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-gray-900">$149.99</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">$179.99</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Shop By Category</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="#" class="bg-gray-50 p-6 rounded-lg flex flex-col items-center hover:bg-blue-50 transition">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-oil-can text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-center">Engine Parts</span>
+                </a>
+                
+                <a href="#" class="bg-gray-50 p-6 rounded-lg flex flex-col items-center hover:bg-blue-50 transition">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-cogs text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-center">Transmission</span>
+                </a>
+                
+                <a href="#" class="bg-gray-50 p-6 rounded-lg flex flex-col items-center hover:bg-blue-50 transition">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-bolt text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-center">Electrical</span>
+                </a>
+                
+                <a href="#" class="bg-gray-50 p-6 rounded-lg flex flex-col items-center hover:bg-blue-50 transition">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-tools text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-center">Suspension</span>
+                </a>
+                
+                <a href="#" class="bg-gray-50 p-6 rounded-lg flex flex-col items-center hover:bg-blue-50 transition">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-braille text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-center">Brakes</span>
+                </a>
+                
+                <a href="#" class="bg-gray-50 p-6 rounded-lg flex flex-col items-center hover:bg-blue-50 transition">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-fan text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="font-medium text-center">Cooling</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose AutoParts Pro by Adil</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Genuine OEM Parts</h3>
+                    </div>
+                    <p class="text-gray-600">We supply only original manufacturer parts with full warranty coverage to ensure perfect fit and performance.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-truck text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Fast Nationwide Shipping</h3>
+                    </div>
+                    <p class="text-gray-600">Most orders ship same day with free shipping on orders over $99. Get your parts when you need them.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-headset text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Expert Support</h3>
+                    </div>
+                    <p class="text-gray-600">Our ASE-certified technicians are available 7 days a week to help you find the right parts for your vehicle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center mr-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">2 days ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The Hyundai brake pads I ordered fit perfectly and arrived faster than expected. Saved me over $100 compared to the dealership!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
+                        <div>
+                            <h4 class="font-medium">Michael R.</h4>
+                            <p class="text-sm text-gray-500">2019 Hyundai Tucson Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center mr-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">1 week ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Excellent service! The KIA oil filter was genuine OEM at a great price. The website made it easy to find exactly what I needed for my Sorento."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
+                        <div>
+                            <h4 class="font-medium">Sarah L.</h4>
+                            <p class="text-sm text-gray-500">2020 KIA Sorento Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center mr-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">3 weeks ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Found the exact Toyota RAV4 headlight assembly I needed. The quality is excellent and installation was straightforward with their guide."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
+                        <div>
+                            <h4 class="font-medium">David K.</h4>
+                            <p class="text-sm text-gray-500">2018 Toyota RAV4 Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Stay Updated With Our Latest Offers</h2>
+                <p class="mb-6">Subscribe to our newsletter and get 10% off your first order plus exclusive deals on Hyundai, KIA and Toyota parts.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="px-4 py-3 rounded flex-grow text-gray-900 focus:outline-none">
+                    <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded hover:bg-gray-800 transition">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AutoParts Pro By Adil</h3>
+                    <p class="text-gray-400 mb-4">Your trusted source for genuine Hyundai, KIA and Toyota spare parts with nationwide shipping and expert support.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shop</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">My Account</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Track Order</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Return Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Warranty Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">123 Auto Parts Way, Detroit, MI 48201</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">+966 59 712 2039</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">support@autopartsprobyadil.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">Mon-Fri: 8AM - 6PM EST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 AutoParts Pro by Adil. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png" alt="Mastercard" class="h-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="Amex" class="h-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Paypal_2014_logo.png/640px-Paypal_2014_logo.png" alt="PayPal" class="h-8">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle would go here
+            // Cart functionality would go here
+            // Search functionality would go here
+            
+            // Example: Add to cart animation
+            const addToCartButtons = document.querySelectorAll('button.bg-blue-600');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    icon.classList.remove('fa-shopping-cart');
+                    icon.classList.add('fa-check');
+                    
+                    setTimeout(() => {
+                        icon.classList.remove('fa-check');
+                        icon.classList.add('fa-shopping-cart');
+                    }, 1000);
+                });
+            });
+            
+            // Vehicle selector form submission
+            const vehicleForm = document.querySelector('.vehicle-selector');
+            if(vehicleForm) {
+                vehicleForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Process form data and redirect to appropriate parts page
+                });
+            }
+        });
+    </script>
+</body>
+</html>
